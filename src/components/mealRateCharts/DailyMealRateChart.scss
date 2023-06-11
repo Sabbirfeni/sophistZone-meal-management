@@ -1,0 +1,55 @@
+.daily-meal-rate-chart {
+    flex: 3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
+    -webkit-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
+    -moz-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
+
+    .title-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgb(0, 0, 0);
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .progress-bar-container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        .progress-bar {
+            max-width: 160px;
+            max-height: 160px;
+        }
+        .progress-bar-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    .summery {
+        display: flex;
+        justify-content: space-evenly;
+        .item-title {
+            // color: #acacac;
+            font-size: 13px;
+        }
+        .item-result {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.positive {
+                color: green;
+            }
+            &.negative {
+                color: red;
+            }
+        }
+    }
+}

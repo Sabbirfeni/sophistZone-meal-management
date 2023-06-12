@@ -8,7 +8,7 @@ export default function GeneralLayout() {
         <div>
             <div>Navbar</div>
             <Outlet/>
-            <Link to='/room/dashboard'>Go to Room</Link>
+            <Link to='/dashboard'>Go to Dashboard</Link>
         </div>
     </>
   );

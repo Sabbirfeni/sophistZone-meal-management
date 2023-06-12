@@ -5,7 +5,9 @@
     box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
     -webkit-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
     -moz-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .title-bar {
         display: flex;
         align-items: center;

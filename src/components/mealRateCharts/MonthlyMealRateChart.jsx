@@ -4,9 +4,10 @@ import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 import { useStateContext } from '../../contexts/ContextProvider';
 export default function MonthlyMealRateChart() {
   const { screenSize } = useStateContext();
-  const [ chartWidth, setChartWidth ] = useState(null);
+  const [ chartMargin, setAllSize ] = useState({ right: 20, left: 20 });
+
   useEffect(() => {
-    screenSize > 1200 ? setChartWidth('90%') : setChartWidth('100%')
+    screenSize < 600 && setAllSize({ right: 15, left: 15 })
   }, [screenSize])
   const data = [
     {
@@ -43,9 +44,9 @@ export default function MonthlyMealRateChart() {
   return (
     <div className="monthly-meal-rate-chart-container">
     <div>Last Six Month Meal Rate</div>
-    <ResponsiveContainer className='monthly-meal-rate-chart' minWidth={300} minHeight={240} height={240}>
+    <ResponsiveContainer className='monthly-meal-rate-chart' minWidth={300} height={300}>
       <AreaChart data={data}
-        margin={{ top: 10, right: 20, left: 20, bottom: 0 }}>
+        margin={{ top: 10, right: chartMargin.right , left: chartMargin.left, bottom: 0 }}>
         <defs>
           <linearGradient id="Rate" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>

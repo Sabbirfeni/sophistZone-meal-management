@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home, Login, New, Single, List, Dashboard } from "../Pages";
 import GeneralLayout from "../layouts/generalLayout/GeneralLayout";
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
+import PrivateRoute from "./Privateroute";
+import DashBoardLayout from "../layouts/dashboardLayout/DashboardLayout";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -18,12 +20,15 @@ const route = createBrowserRouter([
         ]
     },
     {
-        path: '/room',
-        element: <DashboardLayout/>,
+        path: '/dashboard',
+        element: (
+            <PrivateRoute>
+                <DashBoardLayout/>
+            </PrivateRoute>),
         children: [
             {
-                path: 'dashboard',
-                element: <Dashboard/>
+                path: 'overview',
+                element: <Dashboard/>,
             },
             {
                 path: 'users',

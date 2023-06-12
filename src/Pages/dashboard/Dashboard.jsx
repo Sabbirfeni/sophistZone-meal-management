@@ -4,6 +4,7 @@ import './dashboard.scss';
 import { dashboardWidgets } from '../../constants/dummy';
 import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateChart";
 import MonthlyMealRateChart from "../../components/mealRateCharts/MonthlyMealRateChart";
+import YearlyMealChart from "../../components/mealRateCharts/YearlyMealChart";
 
 export default function Dashboard() {
   return (
@@ -17,6 +18,7 @@ export default function Dashboard() {
         <DailyMealRateChart/>
         <MonthlyMealRateChart/>
       </div>
+      <YearlyMealChart/>
     </>
   );
 }

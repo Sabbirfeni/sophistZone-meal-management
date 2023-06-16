@@ -53,8 +53,8 @@ export default function MonthlyMealRateChart() {
             <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
           </linearGradient>
         </defs>
-        <XAxis dataKey="name" />
-        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" fontSize='12px'/>
+        <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0"/>
         <Tooltip />
         <Area type="monotone" dataKey="Rate" stroke="#82ca9d" fillOpacity={1} fill="url(#Rate)" />
       </AreaChart>

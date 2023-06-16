@@ -15,7 +15,7 @@ export default function DailyMealRateChart() {
       </div>
       <div className="progress-bar-container">
         <div className="progress-bar">
-          <CircularProgressbar styles={{text: {fontSize: '14px'}}}  value={50.45} text={`${value}/-`}  strokeWidth={6}/>
+          <CircularProgressbar styles={{text: {fontSize: '14px'}}}  value={50.45} text={`${value}/-`} strokeWidth={6}/>
         </div>
         <h2 className="progress-bar-title">Meal Rate</h2>
       </div>

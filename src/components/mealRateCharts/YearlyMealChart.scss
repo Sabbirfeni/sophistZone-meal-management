@@ -1,14 +1,14 @@
-.monthly-meal-rate-chart-container {
+.yearly-meal-rate-chart-container {
     flex: 5;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
     -webkit-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
     -moz-box-shadow: 3px 3px 12px -3px rgba(0,0,0,0.32);
-    @media (max-width: 768px) {
-        padding: 5px;
+    @media (max-width: 600px) {
+        padding: 0px;
     }
-    .monthly-meal-rate-chart {
+    .yearly-meal-rate-chart {
         width: 200px;
         height: 300px;
         display: flex;

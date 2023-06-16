@@ -3,8 +3,9 @@ import DashboardWidget from "../../components/dashboardWidgets/DashboardWidget";
 import './dashboard.scss';
 import { dashboardWidgets } from '../../constants/dummy';
 import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateChart";
-import MonthlyMealRateChart from "../../components/mealRateCharts/MonthlyMealRateChart";
-import YearlyMealChart from "../../components/mealRateCharts/YearlyMealChart";
+import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
+import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
+import UserList from '../../components/UserList/UserList';
 
 export default function Dashboard() {
   return (
@@ -17,8 +18,10 @@ export default function Dashboard() {
       <div className="meal-rate-charts">
         <DailyMealRateChart/>
         <MonthlyMealRateChart/>
+        <MonthlyDepositeExpenseChart/>
       </div>
-      <YearlyMealChart/>
+      <UserList/>
+      {/* <YearlyMealChart/> */}
     </>
   );
 }

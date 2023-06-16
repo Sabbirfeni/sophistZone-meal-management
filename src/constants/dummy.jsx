@@ -28,7 +28,7 @@ import { BiArrowFromBottom } from 'react-icons/bi';
 export const dashboardWidgets = [
   {
     title: 'USERS',
-    counter: 0,
+    counter: 30,
     link: 'All User',
     percentage: 30,
     upIcon: <BiArrowFromBottom/>,
@@ -37,16 +37,16 @@ export const dashboardWidgets = [
   },
   {
     title: 'CURRENT BALANCE',
-    counter: 0,
+    counter: 35000,
     link: 'demo',
-    percentage: 0,
+    percentage: 20,
     upIcon: <BiArrowFromBottom/>,
     downIcon: '',
     widgetIcon: <BsFillPersonFill className="icon"/>
   },
   {
     title: 'TOTAL DEPOSIT',
-    counter: 0,
+    counter: 55000,
     link: 'demo',
     percentage: 34,
     upIcon: <BiArrowFromBottom/>,
@@ -55,9 +55,9 @@ export const dashboardWidgets = [
   },
   {
     title: 'TOTAL COST',
-    counter: 0,
+    counter: 20000,
     link: 'demo',
-    percentage: 0,
+    percentage: 10,
     upIcon: <BiArrowFromBottom/>,
     downIcon: '',
     widgetIcon: <BsFillPersonFill className="icon"/>

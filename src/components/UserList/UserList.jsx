@@ -15,9 +15,8 @@ export default function BasicTable() {
     ]
     return (
         <>
-            <div>
-                <h3>All User</h3>
-            </div>
+            <div className='flex flex-1'>
+            <h3>All User</h3>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
@@ -26,9 +25,6 @@ export default function BasicTable() {
                         <TableCell align="center">Deposit</TableCell>
                         <TableCell align="center">Expense</TableCell>
                         <TableCell align='center'>Meal</TableCell>
-                        <TableCell align="center">Give</TableCell>
-                        <TableCell align="center">Get</TableCell>
-                        <TableCell align="center">Action</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -37,23 +33,17 @@ export default function BasicTable() {
                         key={user.name}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                        <TableCell component="th" scope="row">
-                        {user.name}
-                        </TableCell>
+                        <TableCell component="th" scope="row">{user.name}</TableCell>
                         <TableCell align="center">{user.deposit}/-</TableCell>
                         <TableCell align="center">{user.expense}/-</TableCell>
                         <TableCell align='center'>{user.meal}</TableCell>
-                        <TableCell align="center">{user.give}/-</TableCell>
-                        <TableCell align="center">{user.get}/-</TableCell>
-                        <TableCell align="center">
-                            <button type='button'>Edit</button>
-                            <button type='button'>Remove</button>
-                        </TableCell>
                     </TableRow>
                     ))}
                 </TableBody>
                 </Table>
             </TableContainer>
+            </div>
+           
         </>
     );
   }

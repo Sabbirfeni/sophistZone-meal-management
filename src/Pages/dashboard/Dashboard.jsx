@@ -6,8 +6,22 @@ import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateCha
 import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
 import UserList from '../../components/UserList/UserList';
+import Table from '../../components/Table/Table';
 
 export default function Dashboard() {
+  const users = [
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Niloy', deposit: 2345, expense: 232, meal: 23, give: 23, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Niloy', deposit: 2345, expense: 232, meal: 23, give: 23, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Sabbir', deposit: 2345, expense: 232, meal: 23, give: 34, get: 0 },
+    { name: 'Rashed', deposit: 2345, expense: 232, meal: 23, give: 0, get: 54 },
+]
   return (
     <>
       <div className="widgets">
@@ -20,7 +34,12 @@ export default function Dashboard() {
         <MonthlyMealRateChart/>
         <MonthlyDepositeExpenseChart/>
       </div>
-      <UserList/>
+      <div className="flex flex-wrap gap-4">
+        <Table data={users} tableName='Users' columnNo={3} view='short'/>
+        <Table data={users} tableName='Latest Expense' columnNo={3} view='short'/>
+      </div>
+
+
       {/* <YearlyMealChart/> */}
     </>
   );

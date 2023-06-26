@@ -8,9 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 
-export default function BasicTable({ tableName, data, columnNo, view }) {
+export default function BasicTable({ tableName, data, columnNo, view = 'short' }) {
     const tableHeaders = view === 'short' ? Object.keys(data[0]).slice(0, 4) : Object.keys(data[0]);
-    const userData = view === 'short' ? data.map(user => Object.values(user).slice(0, 4)) : data.map(user => Object.values(user))
+    const tableData = view === 'short' ? data.slice(0, 4) : data;
     return (
         <>
             <div className='flex flex-1 flex-col'>
@@ -19,20 +19,18 @@ export default function BasicTable({ tableName, data, columnNo, view }) {
                     <Table  aria-label="simple table">
                     <TableHead>
                         <TableRow className='bg-gray-200'>
-                            {tableHeaders.map(header => <TableCell key={`${header}`} >{header}</TableCell>)}
-                            {/* <TableCell>Name</TableCell>
-                            <TableCell align="center">Deposit</TableCell>
-                            <TableCell align="center">Expense</TableCell>
-                            <TableCell align='center'>Meal</TableCell> */}
+                            {tableHeaders.map(header => <TableCell key={`${header}`}>{ header }</TableCell>)}
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {data.slice(0, 4).map((user) => (
+                        {tableData.map((user) => (
                         <TableRow
                             key={user.name}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            {Object.values(user).slice(0, 4).map((data, index) => <TableCell key={`${data+index}`} align="">{data}</TableCell>)}
+                            {view === 'short' ? 
+                            Object.values(user).slice(0, 4).map((singleData, index) => <TableCell key={`${singleData+index}`} align="">{singleData}</TableCell>) : 
+                            Object.values(user).map((singleData, index) => <TableCell key={`${singleData+index}`} align="">{singleData}</TableCell>)}
                         </TableRow>
                         ))}
                     </TableBody>
@@ -43,4 +41,3 @@ export default function BasicTable({ tableName, data, columnNo, view }) {
         </>
     );
   }
-

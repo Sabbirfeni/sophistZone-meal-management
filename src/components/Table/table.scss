@@ -1,0 +1,24 @@
+.model-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+}
+
+.model {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        // margin: 0px auto;
+    }
+}

@@ -6,6 +6,7 @@ import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateCha
 import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
 import Table from "../../components/Table/Table";
+import ShortTable from "../../components/Table/ShortTable";
 
 export default function Dashboard() {
 
@@ -21,7 +22,11 @@ export default function Dashboard() {
         <MonthlyMealRateChart/>
         <MonthlyDepositeExpenseChart/>
       </div>
-      {/* <Table/> */}
+      <div className="flex gap-4">
+        <ShortTable/>
+        <ShortTable/>
+      </div>
+  
     </>
   );
 }

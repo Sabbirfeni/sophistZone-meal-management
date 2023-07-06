@@ -5,6 +5,7 @@ import { dashboardWidgets } from '../../constants/dummy';
 import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateChart";
 import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
+import Table from "../../components/Table/Table";
 
 export default function Dashboard() {
 
@@ -20,6 +21,7 @@ export default function Dashboard() {
         <MonthlyMealRateChart/>
         <MonthlyDepositeExpenseChart/>
       </div>
+      {/* <Table/> */}
     </>
   );
 }

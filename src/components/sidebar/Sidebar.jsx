@@ -44,7 +44,7 @@ export default function Sidebar() {
                   <div key={item.title}>
                     <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
                     {item.links.map(link => (
-                      <NavLink key={link.name} onClick={handleCloseMenu} to={`${link.name}`} className={({ isActive }) => isActive ? activeLink : normalLink}>
+                      <NavLink key={link.name} onClick={handleCloseMenu} to={`${link.url}`} className={({ isActive }) => isActive ? activeLink : normalLink}>
                         {link.icon} <span>{link.name}</span>
                       </NavLink>
                     ))}

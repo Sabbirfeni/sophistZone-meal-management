@@ -22,9 +22,9 @@ export default function Dashboard() {
         <MonthlyMealRateChart/>
         <MonthlyDepositeExpenseChart/>
       </div>
-      <div className="flex gap-4">
-        <ShortTable/>
-        <ShortTable/>
+      <div className="flex flex-wrap gap-4">
+        <Table/>
+        <Table/>
       </div>
   
     </>

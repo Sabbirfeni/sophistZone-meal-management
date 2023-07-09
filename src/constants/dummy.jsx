@@ -526,8 +526,8 @@ export const links = [
     title: 'Pages',
     links: [
       {
-        name: 'orders',
-        url: 'orders',
+        name: 'Users',
+        url: 'users',
         icon: <AiOutlineShoppingCart />,
       },
       {

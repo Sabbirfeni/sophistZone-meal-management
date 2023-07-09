@@ -61,7 +61,7 @@ export default function ShortTable() {
                     <TableHead>
                         <TableRow className='bg-gray-200'>
                             <TableCell align='left'>Name</TableCell>
-                            <TableCell align='left'>Department</TableCell>
+                            {/* <TableCell align='left'>Department</TableCell> */}
                             <TableCell align='left'>Email</TableCell>
                             <TableCell align='left'>Details</TableCell>
                         </TableRow>
@@ -75,7 +75,7 @@ export default function ShortTable() {
                                         <span>{row.name}</span>
                                     </div>
                                 </TableCell>
-                                <TableCell>{row.department}</TableCell>
+                                {/* <TableCell>{row.department}</TableCell> */}
                                 <TableCell>{row.email}</TableCell>
                                 <TableCell><button onClick={() => openModel(row.id)} type='button'>View</button></TableCell>
                             </TableRow>

@@ -4,6 +4,8 @@ import GeneralLayout from "../layouts/generalLayout/GeneralLayout";
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import PrivateRoute from "./Privateroute";
 import DashBoardLayout from "../layouts/dashboardLayout/DashboardLayout";
+import Users from "../components/users/Users";
+import SingleUser from "../components/users/SingleUser";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -36,7 +38,11 @@ const route = createBrowserRouter([
             },
             {
                 path: 'users',
-                element: <List/>
+                element: <Users/>
+            },
+            {
+                path: 'users/:id',
+                element: <SingleUser/>
             },
             {
                 path: 'ecommerce',

@@ -5,8 +5,7 @@ import { dashboardWidgets } from '../../constants/dummy';
 import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateChart";
 import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
-import Table from "../../components/Table/Table";
-import ShortTable from "../../components/Table/ShortTable";
+import UsersTable from "../../components/Table/UsersTable";
 
 export default function Dashboard() {
 
@@ -23,8 +22,8 @@ export default function Dashboard() {
         <MonthlyDepositeExpenseChart/>
       </div>
       <div className="flex flex-wrap gap-4">
-        <Table/>
-        <Table/>
+        <UsersTable rows={6} columns={3}/>
+        <UsersTable/>
       </div>
   
     </>

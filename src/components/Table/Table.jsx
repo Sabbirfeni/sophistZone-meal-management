@@ -45,13 +45,7 @@ export default function ShortTable() {
             number: '322'
         }
     ]
-    const [ user, setUser ] = useState(null);
-    const [ isModelOpen, setIsModelOpen ] = useState(false);
-    const openModel = (id) => {
-        const selectUser = users.filter(user => user.id === id);
-        setUser(selectUser[0]);
-        setIsModelOpen(true);
-    }
+
     return (
         <>
             <div className='flex flex-1 flex-col'>
@@ -89,17 +83,6 @@ export default function ShortTable() {
                 </TableContainer>
                 
             </div>
-            {isModelOpen && 
-            <div className='model-container'>
-                <div className='model'>
-                    <div>
-                        <img src={user.photoUrl} alt="" />
-                    </div>
-                    <div>{user.name}</div>
-                </div>
-            </div>
-            }
-            
         </>
     );
   }

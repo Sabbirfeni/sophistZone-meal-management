@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Login, New, Single, List, Dashboard } from "../Pages";
+import { Home, Login, New, Single, Dashboard } from "../Pages";
 import GeneralLayout from "../layouts/generalLayout/GeneralLayout";
 import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import PrivateRoute from "./Privateroute";
 import DashBoardLayout from "../layouts/dashboardLayout/DashboardLayout";
-import Users from "../components/users/Users";
-import SingleUser from "../components/users/SingleUser";
+import Users from "../Pages/user/Users";
+import SingleUser from "../Pages/user/SingleUser";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -46,15 +46,15 @@ const route = createBrowserRouter([
             },
             {
                 path: 'ecommerce',
-                element: <List/>
+                element: <SingleUser/>
             },
             {
                 path: 'orders',
-                element: <List/>
+                element: <SingleUser/>
             },
             {
                 path: 'employees',
-                element: <List/>
+                element: <SingleUser/>
             },
             {
                 path: 'users/:userId',
@@ -66,7 +66,7 @@ const route = createBrowserRouter([
             },
             {
                 path: 'product',
-                element: <List/>
+                element: <SingleUser/>
             },
             {
                 path: 'product/:productId',

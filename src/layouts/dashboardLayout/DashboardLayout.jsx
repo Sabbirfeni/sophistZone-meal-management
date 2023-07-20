@@ -11,7 +11,7 @@ export default function DashBoardLayout() {
           <Sidebar />
           <div className={`dark:bg-main-bg bg-main-bg min-h-screen text-black w-full ${isMenuActive ? 'md:ml-72' : 'flex-2'}`}>
               <Navbar/>
-              <div className="flex flex-col gap-4 p-4">
+              <div className="flex flex-col div-gap p-3">
                 <Outlet />
               </div>
           </div>

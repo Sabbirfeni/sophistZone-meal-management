@@ -6,24 +6,25 @@ import DailyMealRateChart from "../../components/mealRateCharts/DailyMealRateCha
 import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryChart";
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
 import UsersTable from "../../components/Table/UsersTable";
+import TransactionTable from "../../components/Table/TransactionTable";
 
 export default function Dashboard() {
 
   return (
     <>
-      <div className="widgets">
+      <div className="widgets div-gap">
       {dashboardWidgets.map((data, index) => (
         <DashboardWidget key={`${data.title}`} {...data}/>
       ))}
       </div>
-      <div className="meal-rate-charts">
+      <div className="meal-rate-charts div-gap">
         <DailyMealRateChart/>
         <MonthlyMealRateChart/>
         <MonthlyDepositeExpenseChart/>
       </div>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap div-gap">
         <UsersTable rows={6} columns={3}/>
-        <UsersTable/>
+        <TransactionTable/>
       </div>
   
     </>

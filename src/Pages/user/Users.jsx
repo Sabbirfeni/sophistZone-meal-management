@@ -1,5 +1,5 @@
 import React from "react";
-import UsersTable from '../Table/UsersTable';
+import UsersTable from '../../components/Table/UsersTable';
 
 export default function Users() {
   return (

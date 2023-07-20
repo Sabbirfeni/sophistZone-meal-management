@@ -42,7 +42,7 @@ export default function MonthlyMealRateChart() {
     }
   ];
   return (
-    <div className="monthly-meal-rate-chart-container">
+    <div className="monthly-meal-rate-chart-container div-shadow">
     <div>Last Six Month Meal Rate</div>
     <ResponsiveContainer className='monthly-meal-rate-chart' minWidth={300} height={300}>
       <AreaChart data={data}

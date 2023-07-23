@@ -143,10 +143,13 @@ export default function UsersTable({ rows, columns }) {
 
     return (
         <>
-            <div className='flex flex-1 flex-col'>
-              <div className='flex justify-between mb-2'>
-                <h3>Users</h3>
-                {rows && <Link to='/dashboard/users'>View All</Link>}
+            <div className='flex flex-1 flex-col div-shadow'>
+            <div className='flex justify-between align-center p-3'>
+                <h3>Transactions</h3>
+                <div>
+                    {rows && <Link className='view-all-btn' to='/dashboard/users'>View All</Link>}
+                </div>
+
               </div>
                 
                 <TableContainer component={Paper}>
@@ -159,7 +162,7 @@ export default function UsersTable({ rows, columns }) {
                     </TableHead>
                     <TableBody>
                         {users.map(user => (
-                            <TableRow key={user.photoUrl}>
+                            <TableRow key={user.id}>
                                 <TableCell>
                                     <div style={{ display: 'flex', alignItems: 'center'}}>
                                         <img src={user.photoUrl} style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '5px', border: '2px solid gray', padding: '2px'} }/>

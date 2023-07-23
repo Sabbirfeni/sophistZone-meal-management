@@ -73,7 +73,7 @@
 
 
 import React, { PureComponent, useEffect, useState } from "react";
-import './YearlyMealChart.scss';
+import '../../assets/styles/chart.scss';
 import { AreaChart, BarChart, Bar, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useStateContext } from '../../contexts/ContextProvider';
 export default function YearlyMealChart() {
@@ -116,7 +116,7 @@ export default function YearlyMealChart() {
     }
   ];
   return (
-    <div className="yearly-meal-rate-chart-container div-shadow">
+    <div className="chart-container div-shadow">
     <div>Last Six Month Meal Rate</div>
     {/* <ResponsiveContainer className='yearly-meal-rate-chart' minWidth={300} height={300}>
       <AreaChart data={data}
@@ -138,10 +138,9 @@ export default function YearlyMealChart() {
         <Area type="monotone" dataKey="Expense" stroke="#ffc987" fillOpacity={1} fill="url(#Expense)" />
       </AreaChart>
     </ResponsiveContainer> */}
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer minWidth={100}>
         <BarChart
-          width={500}
-          height={300}
+          maxWidth={100}
           data={data}
           margin={{
             top: 5,

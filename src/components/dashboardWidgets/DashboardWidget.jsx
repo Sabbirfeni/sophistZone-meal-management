@@ -4,7 +4,7 @@ import './dashboardWidget.scss';
 
 export default function DashboardWidget({ title, counter, link, percentage, upIcon, downIcon, widgetIcon }) {
   return (
-    <div className="widget">
+    <div className="widget div-shadow">
       <div className="left">
         <span className="title">{title}</span>
         <span className="counter">{counter}</span>

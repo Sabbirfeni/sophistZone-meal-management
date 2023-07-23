@@ -1,5 +1,5 @@
 import React, { PureComponent, useEffect, useState } from "react";
-import './MonthlyMealRateChart.scss';
+import '../../assets/styles/chart.scss';
 import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useStateContext } from '../../contexts/ContextProvider';
 export default function MonthlyMealRateChart() {
@@ -42,10 +42,10 @@ export default function MonthlyMealRateChart() {
     }
   ];
   return (
-    <div className="monthly-meal-rate-chart-container div-shadow">
+    <div className="chart-container div-shadow">
     <div>Last Six Month Meal Rate</div>
-    <ResponsiveContainer className='monthly-meal-rate-chart' minWidth={300} height={300}>
-      <AreaChart data={data}
+    <ResponsiveContainer minWidth={100}>
+      <AreaChart data={data} 
         margin={{ top: 10, right: chartMargin.right , left: chartMargin.left, bottom: 0 }}>
         <defs>
           <linearGradient id="Rate" x1="0" y1="0" x2="0" y2="1">

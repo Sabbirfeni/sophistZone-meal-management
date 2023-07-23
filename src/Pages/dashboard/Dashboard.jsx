@@ -24,7 +24,7 @@ export default function Dashboard() {
       </div>
       <div className="flex flex-wrap div-gap">
         <UsersTable rows={6} columns={3}/>
-        <TransactionTable/>
+        <TransactionTable rows={6} columns={3}/>
       </div>
   
     </>

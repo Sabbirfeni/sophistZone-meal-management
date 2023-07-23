@@ -1,8 +1,7 @@
 .singleUser-data-container {
     display: flex;
-    flex-direction: row;
-    // flex-wrap: wrap;
-    @media screen and (max-width: 900px) {
+    flex-wrap: wrap;
+    @media (max-width: 768px) {
         flex-direction: column;
     }
 }

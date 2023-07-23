@@ -6,6 +6,8 @@ import PrivateRoute from "./Privateroute";
 import DashBoardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import Users from "../Pages/user/Users";
 import SingleUser from "../Pages/user/SingleUser";
+import Transaction from "../Pages/transaction/Transaction";
+import Meal from "../Pages/meal/Meal";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -45,12 +47,12 @@ const route = createBrowserRouter([
                 element: <SingleUser/>
             },
             {
-                path: 'ecommerce',
-                element: <SingleUser/>
+                path: 'transactions',
+                element: <Transaction/>
             },
             {
-                path: 'orders',
-                element: <SingleUser/>
+                path: 'Meal',
+                element: <Meal/>
             },
             {
                 path: 'employees',

@@ -531,8 +531,13 @@ export const links = [
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'employees',
-        url: 'employees',
+        name: 'Transactions',
+        url: 'transactions',
+        icon: <AiOutlineShoppingCart />,
+      },
+      {
+        name: 'Meal',
+        url: 'meal',
         icon: <IoMdContacts />,
       },
       {

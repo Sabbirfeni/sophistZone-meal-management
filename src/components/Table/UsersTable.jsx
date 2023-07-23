@@ -140,7 +140,8 @@ export default function UsersTable({ rows, columns }) {
     })
     const tableColumns = columns ? shortTableColumns : totalColumns;
     const users = rows ? shortTableUsers : totalUsers;
-
+ 
+    
     return (
         <>
             <div className='flex flex-1 flex-col div-shadow'>

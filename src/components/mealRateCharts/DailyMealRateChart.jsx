@@ -8,7 +8,7 @@ import { BiArrowFromBottom } from 'react-icons/bi';
 export default function DailyMealRateChart() {
   const value = 50.45
   return (
-    <div className="daily-meal-rate-chart div-shadow">
+    <div className="daily-meal-rate-chart div-shadow box-padding">
       <div className="title-bar">
         <h1 className="title">Total Revenue</h1>
         <BsThreeDotsVertical fontSize='small'/>

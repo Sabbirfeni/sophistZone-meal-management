@@ -541,8 +541,13 @@ export const links = [
         icon: <IoMdContacts />,
       },
       {
-        name: 'customers',
-        url: 'customers',
+        name: 'Add User',
+        url: 'add-user',
+        icon: <RiContactsLine />,
+      },
+      {
+        name: 'Add Transaction',
+        url: 'add-transaction',
         icon: <RiContactsLine />,
       },
     ],

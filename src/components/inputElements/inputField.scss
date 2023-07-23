@@ -1,0 +1,14 @@
+.file-icon {
+    cursor: pointer;
+    font-size: 25px;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    flex: 1;
+}
+input {
+    background-color: #f4f4f4;
+    padding: 100px;
+}

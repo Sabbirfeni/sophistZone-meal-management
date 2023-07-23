@@ -8,6 +8,8 @@ import Users from "../Pages/user/Users";
 import SingleUser from "../Pages/user/SingleUser";
 import Transaction from "../Pages/transaction/Transaction";
 import Meal from "../Pages/meal/Meal";
+import AddUser from "../Pages/user/AddUser";
+import AddTransaction from "../Pages/transaction/AddTransaction";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -55,12 +57,12 @@ const route = createBrowserRouter([
                 element: <Meal/>
             },
             {
-                path: 'employees',
-                element: <SingleUser/>
+                path: 'add-user',
+                element: <AddUser/>
             },
             {
-                path: 'users/:userId',
-                element: <Single/>,
+                path: 'add-transaction',
+                element: <AddTransaction/>,
             },
             {
                 path: 'users/new',

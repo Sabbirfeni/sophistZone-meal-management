@@ -145,9 +145,10 @@ export default function UsersTable({ rows, columns }) {
         <>
             <div className='flex flex-1 flex-col div-shadow'>
             <div className='flex justify-between align-center p-3'>
-                <h3>Transactions</h3>
+                <h3>Users</h3>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/users'>View All</Link>}
+                    {!rows && <Link className='btn-style m-0' to='/dashboard/add-user'>Add New User</Link>}
                 </div>
 
               </div>

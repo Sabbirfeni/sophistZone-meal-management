@@ -161,6 +161,7 @@ export default function TransactionTable({ rows, columns }) {
                 <h3>Transactions</h3>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/transactions'>View All</Link>}
+                    {!rows && <Link className='btn-style m-0' to='/dashboard/add-transaction'>New Transaction</Link>}
                 </div>
 
               </div>

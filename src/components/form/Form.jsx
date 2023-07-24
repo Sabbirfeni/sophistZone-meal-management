@@ -7,7 +7,10 @@ export default function Form({ children, title, submitValue }) {
     <form className='form'>
         <h1 className='form-title'>{title}</h1>
         {children}
-        <Button type="submit" className='btn-style' value={submitValue}/>
+        <div className='float-right'>
+          <Button type="submit" btnStyle='form-btn' value={submitValue}/>
+        </div>
+
     </form>
   )
 }

@@ -1,21 +1,8 @@
-.add-user-form-container {
-    display: flex;
-    flex-wrap: wrap;
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
-      }
-    .left {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        .profile-img-preview {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-    }
-    .right {
-        flex: 2;
+.add-user-container {
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 }

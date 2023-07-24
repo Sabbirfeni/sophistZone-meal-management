@@ -99,11 +99,12 @@ export default function MealTable({ rows, columns }) {
 
     return (
         <>
-            <div className='flex flex-1 flex-col div-shadow '>
-              <div className='flex justify-between align-center p-3'>
-                <h3>Meal</h3>
+            <div className='flex flex-1 flex-col  box-style p-0'>
+              <div className='flex justify-between items-center p-3'>
+                <h3 className='table-title'>Meal</h3>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/transactions'>View All</Link>}
+                    {!rows && <Link className='btn-style m-0 block' to='/dashboard/add-transaction'>Add New Meals</Link>}
                 </div>
 
               </div>

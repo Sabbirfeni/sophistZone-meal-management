@@ -8,7 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { Link, useAsyncError } from 'react-router-dom';
-
+import { AiFillEye } from 'react-icons/ai';
+import { MdDelete } from 'react-icons/md';
+import { FaEdit } from 'react-icons/fa';
 
 export default function UsersTable({ rows, columns }) {
     const totalUsers = [
@@ -144,12 +146,12 @@ export default function UsersTable({ rows, columns }) {
     
     return (
         <>
-            <div className='flex flex-1 flex-col div-shadow'>
-            <div className='flex justify-between align-center p-3'>
-                <h3>Users</h3>
+            <div className='flex flex-1 flex-col box-style p-0'>
+            <div className='flex justify-between items-center p-3'>
+                <h1 className='table-title'>Users</h1>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/users'>View All</Link>}
-                    {!rows && <Link className='btn-style m-0' to='/dashboard/add-user'>Add New User</Link>}
+                    {!rows && <Link className='btn-style m-0 block' to='/dashboard/add-user'>Add New User</Link>}
                 </div>
 
               </div>
@@ -159,7 +161,7 @@ export default function UsersTable({ rows, columns }) {
                     <TableHead>
                         <TableRow className='bg-gray-200'>
                             {tableColumns.map(column => <TableCell key={column.title} align={`${column.align}`}>{`${column.title}`}</TableCell>)}
-                            <TableCell align='center'>Details</TableCell>
+                            <TableCell align='center'>{rows ? 'Action': 'Actions'}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -174,7 +176,13 @@ export default function UsersTable({ rows, columns }) {
                                 <TableCell>{user.email}</TableCell>
                                 {user.department && <TableCell>{user.department}</TableCell>}
                                 {user.number && <TableCell>{user.number}</TableCell>}
-                                <TableCell align='center'><Link to={`/dashboard/users/${user.id}`}>View</Link></TableCell>
+                                <TableCell align='center'>
+                                    <div className='flex justify-center'>
+                                            <Link to={`/dashboard/users/${user.id}`}><AiFillEye className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-blue-500'/></Link>
+                                            {!rows && <FaEdit className='fill-gray-300 m-1 text-lg cursor-pointer transition hover:fill-blue-500'/>}
+                                            {!rows && <MdDelete className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-red-800'/>}
+                                    </div>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

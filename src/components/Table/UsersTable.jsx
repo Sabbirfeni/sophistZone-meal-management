@@ -8,10 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import { Link, useAsyncError } from 'react-router-dom';
-import { AiFillEye } from 'react-icons/ai';
+import { AiFillEye, AiOutlinePlusSquare } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import { FaEdit } from 'react-icons/fa';
-
 export default function UsersTable({ rows, columns }) {
     const totalUsers = [
         {
@@ -148,10 +147,10 @@ export default function UsersTable({ rows, columns }) {
         <>
             <div className='flex flex-1 flex-col box-style p-0'>
             <div className='flex justify-between items-center p-3'>
-                <h1 className='table-title'>Users</h1>
+                <h1 className={rows ? 'text-lg table-title' : 'table-title'}>Users</h1>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/users'>View All</Link>}
-                    {!rows && <Link className='btn-style m-0 block' to='/dashboard/add-user'>Add New User</Link>}
+                    {!rows && <Link className='btn-style m-0 flex items-center hover:text-white' to='/dashboard/add-user'><AiOutlinePlusSquare className='text-lg mr-1'/>New User</Link>}
                 </div>
 
               </div>
@@ -179,8 +178,8 @@ export default function UsersTable({ rows, columns }) {
                                 <TableCell align='center'>
                                     <div className='flex justify-center'>
                                             <Link to={`/dashboard/users/${user.id}`}><AiFillEye className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-blue-500'/></Link>
-                                            {!rows && <FaEdit className='fill-gray-300 m-1 text-lg cursor-pointer transition hover:fill-blue-500'/>}
-                                            {!rows && <MdDelete className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-red-800'/>}
+                                            {!rows && <FaEdit className='fill-gray-300 m-1 text-lg cursor-pointer transition hover:fill-orange-400'/>}
+                                            {!rows && <MdDelete className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-red-500'/>}
                                     </div>
                                 </TableCell>
                             </TableRow>

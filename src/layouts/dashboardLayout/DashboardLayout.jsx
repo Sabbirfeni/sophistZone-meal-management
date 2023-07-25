@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Sidebar, Navbar } from "../../components";
-import { useStateContext } from "../../contexts/ContextProvider";
+import useAuth from "../../contexts/useAuth";
 
 export default function DashBoardLayout() {
-  const { isMenuActive } = useStateContext();
+  const { isMenuActive } = useAuth();
   return (
     <>
         <div className="flex relative dark:bg-main-dark-bg">

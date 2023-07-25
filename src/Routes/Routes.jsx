@@ -10,6 +10,8 @@ import Transaction from "../Pages/transaction/Transaction";
 import Meal from "../Pages/meal/Meal";
 import AddUser from "../Pages/user/AddUser";
 import AddTransaction from "../Pages/transaction/AddTransaction";
+import AddMeal from "../Pages/meal/AddMeal";
+import CreateRoom from "../Pages/createRoom/CreateRoom";
 const route = createBrowserRouter([
     {
         path: '/',
@@ -23,6 +25,10 @@ const route = createBrowserRouter([
                 path: 'login',
                 element: <Login/>,
             },
+            {
+                path: 'create-room',
+                element: <CreateRoom/>
+            }
         ]
     },
     {
@@ -65,8 +71,8 @@ const route = createBrowserRouter([
                 element: <AddTransaction/>,
             },
             {
-                path: 'users/new',
-                element: <New/>,
+                path: 'add-meal',
+                element: <AddMeal/>,
             },
             {
                 path: 'product',

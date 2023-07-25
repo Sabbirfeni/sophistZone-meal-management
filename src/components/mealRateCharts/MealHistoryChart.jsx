@@ -1,9 +1,9 @@
 import React, { PureComponent, useEffect, useState } from "react";
 import '../../assets/styles/chart.scss';
 import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useStateContext } from '../../contexts/ContextProvider';
+import useAuth from "../../contexts/useAuth";
 export default function MonthlyMealRateChart() {
-  const { screenSize } = useStateContext();
+  const { screenSize } = useAuth();
   const [ chartMargin, setAllSize ] = useState({ right: 20, left: 20 });
 
   useEffect(() => {

@@ -1,14 +1,15 @@
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart, FiUserPlus, FiUsers } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { BiColorFill, BiCommentAdd } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/Io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
-import { HiOutlineRefresh } from 'react-icons/hi';
+import { HiOutlineRefresh, HiOutlineViewGrid, HiOutlineUsers } from 'react-icons/hi';
+import { TbPlaylistAdd } from 'react-icons/tb';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
+import { GiHotMeal } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import avatar from '../assets/avatar.jpg';
 import avatar2 from '../assets/avatar2.jpg';
@@ -23,7 +24,7 @@ import product6 from '../assets/product6.jpg';
 import product7 from '../assets/product7.jpg';
 import product8 from '../assets/product8.jpg';
 import { BsFillPersonFill } from 'react-icons/bs';
-import { BiArrowFromBottom } from 'react-icons/bi';
+import { BiArrowFromBottom, BiMoney } from 'react-icons/bi';
 
 export const dashboardWidgets = [
   {
@@ -517,7 +518,7 @@ export const links = [
       {
         name: 'Overview',
         url: 'overview',
-        icon: <FiShoppingBag />,
+        icon: <HiOutlineViewGrid />,
       },
     ],
   },
@@ -528,89 +529,35 @@ export const links = [
       {
         name: 'Users',
         url: 'users',
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: 'Transactions',
-        url: 'transactions',
-        icon: <AiOutlineShoppingCart />,
+        icon: <FiUsers />,
       },
       {
         name: 'Meal',
         url: 'meal',
-        icon: <IoMdContacts />,
+        icon: <GiHotMeal />,
+      },
+      {
+        name: 'Transactions',
+        url: 'transactions',
+        icon: <BiMoney />,
       },
       {
         name: 'Add User',
         url: 'add-user',
-        icon: <RiContactsLine />,
+        icon: <FiUserPlus />,
+      },
+      {
+        name: 'Add Meals',
+        url: 'add-meal',
+        icon: <BiCommentAdd />,
       },
       {
         name: 'Add Transaction',
         url: 'add-transaction',
-        icon: <RiContactsLine />,
+        icon: <TbPlaylistAdd />,
       },
     ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
+  }
 ];
 
 export const cartData = [

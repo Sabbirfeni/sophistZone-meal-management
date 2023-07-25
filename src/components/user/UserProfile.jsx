@@ -6,7 +6,7 @@ import { CiLocationOn } from 'react-icons/ci';
 
 export default function UserProfile() {
   return (
-    <div className='user-profile div-shadow'>
+    <div className='user-profile box-style'>
         <Link to='/' className="user-edit-btn">Edit</Link>
 
       <div className="user-item">

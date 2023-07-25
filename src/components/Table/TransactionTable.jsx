@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import { AiOutlinePlusSquare } from 'react-icons/ai';
+
 import { Link, useAsyncError } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md'
 import { FaEdit } from 'react-icons/fa'
@@ -160,10 +162,10 @@ export default function TransactionTable({ rows, columns }) {
         <>
             <div className='flex flex-1 flex-col box-style p-0'>
               <div className='flex justify-between items-center p-3'>
-                <h1 className='table-title'>Transactions</h1>
+                <h1 className={rows ? 'text-lg table-title' : 'table-title'}>Transactions</h1>
                 <div>
                     {rows && <Link className='view-all-btn' to='/dashboard/transactions'>View All</Link>}
-                    {!rows && <Link className='btn-style m-0 block' to='/dashboard/add-transaction'>New Transaction</Link>}
+                    {!rows && <Link className='btn-style m-0 flex items-center hover:text-white' to='/dashboard/add-transaction'><AiOutlinePlusSquare className='text-lg mr-1'/>New Transaction</Link>}
                 </div>
 
               </div>
@@ -195,8 +197,8 @@ export default function TransactionTable({ rows, columns }) {
                                 {user.purpose && <TableCell>{user.purpose}</TableCell>}
                                 <TableCell align='center'>
                                     <div className='flex justify-center'>
-                                        <FaEdit className='fill-gray-300 m-1 text-lg cursor-pointer transition hover:fill-blue-500'/>
-                                        <MdDelete className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-red-800'/>  
+                                        <FaEdit className='fill-gray-300 m-1 text-lg cursor-pointer transition hover:fill-orange-400'/>
+                                        <MdDelete className='fill-gray-300 m-1 text-xl cursor-pointer transition hover:fill-red-500'/>  
                                     </div>
                                 </TableCell>
                             </TableRow>

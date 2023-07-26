@@ -9,10 +9,10 @@ export default function AddUser() {
 
   return (
     <div className='add-user-container box-style'>
-            <Form title='Add New User' submitValue='Add User'>
+            <Form title='Add new user' submitValue='Add User'>
                 <div className='m-4'>
                     <div className='flex justify-center'>
-                        <img src={profileImg ? URL.createObjectURL(profileImg) : "https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"} alt="" />
+                        <img className='profile-img-preview' src={profileImg ? URL.createObjectURL(profileImg) : "https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"} alt="" />
                     </div>
                     <FileInputField setFile={setProfileImg}/>
                 </div>
@@ -22,7 +22,7 @@ export default function AddUser() {
                 </div>
                 <div className='flex flex-wrap'>
                     <InputField label={'Phone'} type={'number'} value={''} placeholder={'phone'}/>
-                    <InputField label={'Name of University'} type={'text'} value={''} placeholder={'name of university'}/>
+                    <InputField label={'University/school/college'} type={'text'} value={''} placeholder={'university/school/college'}/>
                 </div>
                 <div className='flex flex-wrap'>
                     <InputField label={'Session'} type={'text'} value={''} placeholder={'session'}/>

@@ -1,6 +1,13 @@
-
-.form-title {
-    font-size: 23px;
-    margin-bottom: 20px;
-    color: black;
+form {
+    .form-title {
+        font-size: 23px;
+        margin-bottom: 20px;
+        color: black;
+    }
+    .profile-img-preview {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }

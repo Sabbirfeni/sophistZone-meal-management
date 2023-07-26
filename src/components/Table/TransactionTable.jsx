@@ -15,7 +15,7 @@ import { FaEdit } from 'react-icons/fa'
 import './table.scss';
 
 export default function TransactionTable({ rows, columns }) {
-    const totalUsers = [
+    const totalTransaction = [
         {
             id: 34653,
             date: '02-03-23',
@@ -146,7 +146,7 @@ export default function TransactionTable({ rows, columns }) {
     ]
 
     const shortTableColumns = totalColumns.slice(0, columns);
-    const shortTableUserRows = totalUsers.slice(0, rows);
+    const shortTableUserRows = totalTransaction.slice(0, rows);
     const shortTableUsers = shortTableUserRows.map(user => {
         const sliced = Object.keys(user).slice(0, columns + 3).reduce((result, key) => {
             result[key] = user[key];
@@ -156,7 +156,7 @@ export default function TransactionTable({ rows, columns }) {
     })
     const tableColumns = columns ? shortTableColumns : totalColumns;
 
-    const users = rows ? shortTableUsers : totalUsers;
+    const users = rows ? shortTableUsers : totalTransaction;
     console.log(users)
     return (
         <>

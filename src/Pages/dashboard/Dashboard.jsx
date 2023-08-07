@@ -7,9 +7,11 @@ import MonthlyMealRateChart from "../../components/mealRateCharts/MealHistoryCha
 import MonthlyDepositeExpenseChart from "../../components/mealRateCharts/MonthlyDepositeExpenseChart";
 import UsersTable from "../../components/Table/UsersTable";
 import TransactionTable from "../../components/Table/TransactionTable";
+import useAuth from "../../contexts/useAuth";
 
 export default function Dashboard() {
-
+  const { user, room } = useAuth(); 
+  console.log(user)
   return (
     <>
       <div className="widgets div-gap">

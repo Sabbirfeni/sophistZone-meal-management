@@ -157,7 +157,7 @@ export default function TransactionTable({ rows, columns }) {
     const tableColumns = columns ? shortTableColumns : totalColumns;
 
     const users = rows ? shortTableUsers : totalTransaction;
-    console.log(users)
+
     return (
         <>
             <div className='flex flex-1 flex-col box-style p-0'>

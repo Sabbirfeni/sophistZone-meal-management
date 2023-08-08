@@ -8,7 +8,7 @@ import Button from "../button/Button";
 import { Link, NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-    const { user, login, logout, isMenuActive, setIsMenuActive, screenSize } = useAuth();
+    const { isLogin, login, logout, isMenuActive, setIsMenuActive, screenSize } = useAuth();
     const [ isDashboard, setIsDashboard ] = useState(false);
     const navigate = useNavigate();
 
@@ -16,10 +16,10 @@ export default function Navbar() {
         <>
             <div className="flex shadow-md px-6 py-3 w-full">
                 <div className="flex items-center">
-                    {user ? <NavButton title='Menu' icon={<AiOutlineMenu/>} customFunc={() => setIsMenuActive((prev) => !prev)} color='blue'/> : <BrandName/>}
+                    {isLogin ? <NavButton title='Menu' icon={<AiOutlineMenu/>} customFunc={() => setIsMenuActive((prev) => !prev)} color='blue'/> : <BrandName/>}
                 </div>
                 <div className="flex flex-1 justify-end items-center gap-2">
-                    {!user ? (
+                    {!isLogin ? (
                         <>
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/login'>Log in</NavLink>

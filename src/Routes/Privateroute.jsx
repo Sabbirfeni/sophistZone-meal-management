@@ -4,8 +4,8 @@ import DashBoardLayout from '../layouts/dashboardLayout/DashboardLayout';
 import { Navigate, useLocation } from 'react-router-dom';
 
 export default function PrivateRoute({ children }) {
-    const {user} = useAuth();
+    const {isLogin} = useAuth();
     const location = useLocation();
-    if(user) return children;
+    if(isLogin) return children;
     return <Navigate to='/login' state={{ from: location }} replace/>;
   }

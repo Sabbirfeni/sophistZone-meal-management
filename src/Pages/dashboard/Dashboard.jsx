@@ -10,8 +10,8 @@ import TransactionTable from "../../components/Table/TransactionTable";
 import useAuth from "../../contexts/useAuth";
 
 export default function Dashboard() {
-  const { user, room } = useAuth(); 
-  console.log(user)
+  // const { currentUser } = useAuth(); 
+  // console.log(currentUser)
   return (
     <>
       <div className="widgets div-gap">

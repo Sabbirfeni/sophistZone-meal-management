@@ -9,15 +9,16 @@ import { auth, storage } from "../../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 export default function SignUp() {
-    const { loading, setLoading, error, setError, signup, updateUser } = useAuth()
+    const { isLogin, loading, setLoading, error, setError, signup, updateUser } = useAuth()
     const navigate = useNavigate();
     const [ file, setFile ] = useState(null);
     const [ userInputs, setUserInputs ] = useState({
     profileImgFile: null,
+    fullName: null,
     email: null,
     password: null
   })
-  const { profileImgFile, email, password } = userInputs;
+  const { profileImgFile, fullName, email, password } = userInputs;
 
   const handleOnChange = e => {
     if(e.target.name === 'profileImgFile') {
@@ -30,13 +31,14 @@ export default function SignUp() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    if(file && email && password) {
+    if(file && fullName && email && password) {
         setLoading(true)
         try {
             await signup(email, password);
-            await updateUser(profileImgFile);
-            navigate('/dashboard');
+            await updateUser(fullName, profileImgFile);
+            console.log(isLogin)
             setLoading(false);
+            navigate('/dashboard');
         }
         catch(err) {
             setError(err.message)
@@ -46,7 +48,6 @@ export default function SignUp() {
         setError('Please enter all data.')
     }
   }
-console.log(userInputs)
   useEffect(() => {
     const uploadProfile = () => {
         const storageRef = ref(storage, 'images/' + file.name);
@@ -98,6 +99,7 @@ console.log(userInputs)
                 </div>
                 <FileInputField name='profileImgFile' handleOnChange={handleOnChange} setFile={setFile} required={true}/>
             </div>
+        <InputField label='Full name' name='fullName' handleOnChange={handleOnChange} type='text' value={fullName} placeholder='full name' required={true}/>
         <InputField label='Email' name='email' handleOnChange={handleOnChange} type='email' value={email} placeholder='email' required={true}/>
         <InputField label='Password' name='password' handleOnChange={handleOnChange} type='password' value={password} placeholder='password' required={true}/>
       </Form>

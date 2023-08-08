@@ -8,8 +8,9 @@ import Button from "../button/Button";
 import { Link, NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-    const { isLogin, login, logout, isMenuActive, setIsMenuActive, screenSize } = useAuth();
+    const { isLogin, currentUser, login, logout, isMenuActive, setIsMenuActive, screenSize } = useAuth();
     const [ isDashboard, setIsDashboard ] = useState(false);
+    console.log(currentUser)
     const navigate = useNavigate();
 
     return (
@@ -29,6 +30,8 @@ export default function Navbar() {
                         <>
                             <NavLink to='/dashboard'>Dashboard</NavLink>
                             <NavLink onClick={logout}>Logout</NavLink>
+                            <span>{currentUser?.fullName}</span>
+
                         </>
                     )}       
                 </div>

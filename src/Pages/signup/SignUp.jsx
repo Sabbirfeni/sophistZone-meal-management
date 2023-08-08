@@ -9,7 +9,7 @@ import { auth, storage } from "../../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 export default function SignUp() {
-    const { isLogin, loading, setLoading, error, setError, signup, updateUser } = useAuth()
+    const { isLogin, loading, setLoading, error, setError, signup, addSignupUserToList } = useAuth()
     const navigate = useNavigate();
     const [ file, setFile ] = useState(null);
     const [ userInputs, setUserInputs ] = useState({
@@ -35,8 +35,7 @@ export default function SignUp() {
         setLoading(true)
         try {
             await signup(email, password);
-            await updateUser(fullName, profileImgFile);
-            console.log(isLogin)
+            await addSignupUserToList(userInputs);
             setLoading(false);
             navigate('/dashboard');
         }

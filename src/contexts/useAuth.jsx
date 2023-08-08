@@ -1,8 +1,10 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import {useNavigate } from "react-router-dom";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { useEffect } from "react";
+import { collection, addDoc, doc, setDoc, getDoc } from "firebase/firestore"; 
+
 const AuthContext = React.createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -18,10 +20,14 @@ export const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
    
-    const updateUser = (userName, userProfileImg) => {
-        setCurrentUser(auth.currentUser)
+    const addSignupUserToList = (userData) => {
+        
         localStorage.setItem('currentUserId', JSON.stringify(auth.currentUser.uid))
-        return updateProfile(auth.currentUser, { displayName: userName,  photoURL: userProfileImg })
+        setIsLogin(JSON.parse(localStorage.getItem('currentUserId')))
+        setCurrentUser(userData)
+        const docRef = doc(db, 'Users', auth.currentUser.uid);
+        return setDoc(docRef, userData)
+        // return updateProfile(auth.currentUser, { displayName: userName,  photoURL: userProfileImg })
     }
 
     const logout = () => {
@@ -30,10 +36,26 @@ export const AuthProvider = ({ children }) => {
     }
     
     useEffect(() => {
-        console.log(isLogin)
+        if(isLogin) {
+            const getCurrentUserData = async () => {
+                const docRef = doc(db, "Users", isLogin);
+                const docSnap = await getDoc(docRef);
+
+                if(docSnap.exists()) {
+                    setCurrentUser(docSnap.data())
+                }
+                else {
+                    console.log('user not exist')
+                }
+            }
+          getCurrentUserData()
+        } else {
+            console.log('user not exist')
+        }
+    
     }, [])
 
-    const values = { loading, setLoading, isLogin, setIsLogin, signup, updateUser, room, logout, error, setError, isMenuActive, setIsMenuActive, screenSize, setScreenSize }
+    const values = { currentUser, loading, setLoading, isLogin, setIsLogin, signup, addSignupUserToList, room, logout, error, setError, isMenuActive, setIsMenuActive, screenSize, setScreenSize }
 
     return (
         <AuthContext.Provider value={values}>

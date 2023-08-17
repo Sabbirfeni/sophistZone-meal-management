@@ -7,9 +7,10 @@ import FileInputField from "../../components/inputElements/fileInputField";
 import '../../../firebase'
 import { auth, storage } from "../../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import Button from "../../components/button/Button";
 
 export default function SignUp() {
-    const { isLogin, loading, setLoading, error, setError, signup, addSignupUserToList } = useAuth()
+    const { isLogin, loading, setLoading, error, setError, signup, googleSignUp, addSignupUserToList } = useAuth()
     const navigate = useNavigate();
     const [ file, setFile ] = useState(null);
     const [ userInputs, setUserInputs ] = useState({
@@ -35,7 +36,7 @@ export default function SignUp() {
         setLoading(true)
         try {
             await signup(email, password);
-            await addSignupUserToList(userInputs);
+            await addSignupUserToList(userInputs, auth.currentUser.uid);
             setLoading(false);
             navigate('/dashboard');
         }
@@ -47,6 +48,19 @@ export default function SignUp() {
         setError('Please enter all data.')
     }
   }
+  const handleGoogleSignUp = async () => {
+    try {
+      setLoading(true)
+
+      await googleSignUp()
+      setLoading(false)
+      navigate('/dashboard')
+      
+    }
+    catch(err) {
+      console.log(err.message)
+    }
+  }
   useEffect(() => {
     const uploadProfile = () => {
         const storageRef = ref(storage, 'images/' + file.name);
@@ -56,6 +70,7 @@ export default function SignUp() {
           (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             console.log('Upload is ' + progress + '% done');
+            setLoading(progress > 0 ? false : true)
             switch (snapshot.state) {
               case 'paused':
                 console.log('Upload is paused');
@@ -85,11 +100,9 @@ export default function SignUp() {
     file && uploadProfile()
   }, [file])
 
-
   return (
     <>
      <div className="box-style">
-        <h1 className="text-red-400">{loading ? 'Loading...' : ''}</h1>
       <Form title='Sign up' submitValue='Sign up' action={handleSubmit}>
         <h4 className="text-red-400">{error}</h4>
         <div className='m-4'>
@@ -101,6 +114,7 @@ export default function SignUp() {
         <InputField label='Full name' name='fullName' handleOnChange={handleOnChange} type='text' value={fullName} placeholder='full name' required={true}/>
         <InputField label='Email' name='email' handleOnChange={handleOnChange} type='email' value={email} placeholder='email' required={true}/>
         <InputField label='Password' name='password' handleOnChange={handleOnChange} type='password' value={password} placeholder='password' required={true}/>
+        <Button btnStyle='btn-style form-btn' type='button' action={handleGoogleSignUp} value='Sign up with google'/>
       </Form>
      </div>
     </>

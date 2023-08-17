@@ -10,7 +10,6 @@ import { Link, NavLink, Navigate, useLocation, useNavigate } from "react-router-
 export default function Navbar() {
     const { isLogin, currentUser, login, logout, isMenuActive, setIsMenuActive, screenSize } = useAuth();
     const [ isDashboard, setIsDashboard ] = useState(false);
-    console.log(currentUser)
     const navigate = useNavigate();
 
     return (
